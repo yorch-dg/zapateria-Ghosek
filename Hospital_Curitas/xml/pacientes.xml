@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pacientes>
+    <paciente>
+        <id>1</id>
+        <nombre>Juan Pérez</nombre>
+        <edad>35</edad>
+        <género>Masculino</género>
+        <diagnóstico>Hipertensión</diagnóstico>
+    </paciente>
+    <paciente>
+        <id>2</id>
+        <nombre>María López</nombre>
+        <edad>29</edad>
+        <género>Femenino</género>
+        <diagnóstico>Diabetes</diagnóstico>
+    </paciente>
+    <paciente>
+        <id>3</id>
+        <nombre>Carlos Sánchez</nombre>
+        <edad>45</edad>
+        <género>Masculino</género>
+        <diagnóstico>Colesterol alto</diagnóstico>
+    </paciente>
+    <paciente>
+        <id>4</id>
+        <nombre>Lucía Gómez</nombre>
+        <edad>52</edad>
+        <género>Femenino</género>
+        <diagnóstico>Consulta general</diagnóstico>
+    </paciente>
+    <paciente>
+        <id>5</id>
+        <nombre>Andrés Martínez</nombre>
+        <edad>40</edad>
+        <género>Masculino</género>
+        <diagnóstico>Dolor de cabeza crónico</diagnóstico>
+    </paciente>
+    <paciente>
+        <id>6</id>
+        <nombre>Patricia Fernández</nombre>
+        <edad>37</edad>
+        <género>Femenino</género>
+        <diagnóstico>Alergia estacional</diagnóstico>
+    </paciente>
+    <paciente>
+        <id>7</id>
+        <nombre>Fernando Torres</nombre>
+        <edad>31</edad>
+        <género>Masculino</género>
+        <diagnóstico>Fractura de brazo</diagnóstico>
+    </paciente>
+    <paciente>
+        <id>8</id>
+        <nombre>Valeria Ruiz</nombre>
+        <edad>26</edad>
+        <género>Femenino</género>
+        <diagnóstico>Infección respiratoria</diagnóstico>
+    </paciente>
+    <paciente>
+        <id>9</id>
+        <nombre>Roberto Castillo</nombre>
+        <edad>50</edad>
+        <género>Masculino</género>
+        <diagnóstico>Consulta de seguimiento</diagnóstico>
+    </paciente>
+    <paciente>
+        <id>10</id>
+        <nombre>Claudia Herrera</nombre>
+        <edad>44</edad>
+        <género>Femenino</género>
+        <diagnóstico>Chequeo anual</diagnóstico>
+    </paciente>
+</pacientes>

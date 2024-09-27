@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Medicamentos</title>
+    <link rel="stylesheet" href="css/estilos.css"> 
+    <script>
+        function buscarMedicamento() {
+            var nombre = document.getElementById("nombreMedicamento").value.trim().toLowerCase();
+            var id = document.getElementById("idMedicamento").value.trim();
+
+            if (nombre === "" && id === "") {
+                document.getElementById("resultado").innerHTML = "Por favor, ingrese un nombre o un ID.";
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "json/medicamentos.json", true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var medicamentos = JSON.parse(xhr.responseText).medicamentos;
+                        var encontrado = false;
+
+                        for (var i = 0; i < medicamentos.length; i++) {
+                            var medicamentoNombre = medicamentos[i].nombre.toLowerCase();
+                            var medicamentoID = medicamentos[i].id.toString(); 
+
+                            if (medicamentoNombre === nombre || medicamentoID === id) {
+                                var resultadoHTML = `
+                                    <h3>Datos del Medicamento</h3>
+                                    <p><strong>ID:</strong> ${medicamentos[i].id}</p>
+                                    <p><strong>Nombre:</strong> ${medicamentos[i].nombre}</p>
+                                    <p><strong>Dosis:</strong> ${medicamentos[i].dosis}</p>
+                                    <p><strong>Presentación:</strong> ${medicamentos[i].presentación}</p>
+                                    <p><strong>Indicaciones:</strong> ${medicamentos[i].indicaciones}</p>
+                                `;
+                                document.getElementById("resultado").innerHTML = resultadoHTML;
+                                encontrado = true;
+                                break;
+                            }
+                        }
+
+                        if (!encontrado) {
+                            document.getElementById("resultado").innerHTML = "Medicamento no encontrado.";
+                        }
+                    } else {
+                        document.getElementById("resultado").innerHTML = "No se pudo cargar el archivo JSON. Asegúrate de que la ruta sea correcta.";
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <div id="imagenCentro">
+        <img src="https://img.freepik.com/fotos-premium/ilustracion-icono-hospital-graficos-dibujos-animados_1070876-11378.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1727308800&semt=ais_hybrid" alt="Descripción de la imagen" /> <!-- Cambia esta ruta a la ubicación de tu imagen -->
+    </div>
+
+    <h1>Consulta de Medicamentos</h1>
+    <p>Ingrese el ID del medicamento o el nombre del medicamento:</p>
+    <input type="text" id="idMedicamento" placeholder="ID del medicamento" /><br><br>
+    <input type="text" id="nombreMedicamento" placeholder="Nombre del medicamento" /><br><br>
+    <button onclick="buscarMedicamento()">Buscar</button>
+    <div id="resultado"></div>
+    <footer>
+        <a href="index.html">Volver a Inicio</a>
+    </footer>
+</body>
+</html>
+

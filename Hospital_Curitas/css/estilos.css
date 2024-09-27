@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #001F3F; /* Color de fondo azul marino */
+    background-image: url('../../ruta/a/tu/fondo.jpg'); /* Ruta a tu imagen de fondo */
+    background-size: cover; /* Cubrir toda la página con la imagen */
+    background-position: center; /* Centrar la imagen */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    color: #FFFFFF; /* Color de texto blanco */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #FFFFFF; /* Color de texto blanco para los encabezados */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF; /* Color de enlace blanco */
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #FFFFFF; /* Color del texto del pie de página blanco */
+    text-align: center;
+}
+
+/* Estilo para centrar una imagen */
+#imagenCentro {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin: 20px 0; /* Espaciado adicional alrededor de la imagen */
+}
+
+#imagenCentro img {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+

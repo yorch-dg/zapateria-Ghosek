@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Pacientes</title>
+    <link rel="stylesheet" href="css/estilos.css"> 
+    <script>
+        // Función para buscar el paciente por ID o por nombre en el archivo XML
+        function buscarPaciente() {
+            var id = document.getElementById("idPaciente").value.trim();
+            var nombre = document.getElementById("nombrePaciente").value.trim().toLowerCase();
+
+            if (id === "" && nombre === "") {
+                document.getElementById("resultado").innerHTML = "Por favor, ingrese un ID o un nombre.";
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "xml/pacientes.xml", true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var xmlDoc = xhr.responseXML;
+                    var pacientes = xmlDoc.getElementsByTagName("paciente");
+                    var encontrado = false;
+
+                    for (var i = 0; i < pacientes.length; i++) {
+                        var pacienteID = pacientes[i].getElementsByTagName("id")[0].textContent;
+                        var pacienteNombre = pacientes[i].getElementsByTagName("nombre")[0].textContent.toLowerCase();
+
+                        if (pacienteID === id || pacienteNombre === nombre) {
+                            var edad = pacientes[i].getElementsByTagName("edad")[0].textContent;
+                            var genero = pacientes[i].getElementsByTagName("género")[0].textContent;
+                            var diagnostico = pacientes[i].getElementsByTagName("diagnóstico")[0].textContent;
+
+                            var resultadoHTML = `
+                                <h3>Datos del Paciente</h3>
+                                <p><strong>ID:</strong> ${pacienteID}</p>
+                                <p><strong>Nombre:</strong> ${pacienteNombre.charAt(0).toUpperCase() + pacienteNombre.slice(1)}</p>
+                                <p><strong>Edad:</strong> ${edad}</p>
+                                <p><strong>Género:</strong> ${genero}</p>
+                                <p><strong>Diagnóstico:</strong> ${diagnostico}</p>
+                            `;
+                            document.getElementById("resultado").innerHTML = resultadoHTML;
+                            encontrado = true;
+                            break;
+                        }
+                    }
+
+                    if (!encontrado) {
+                        document.getElementById("resultado").innerHTML = "Paciente no encontrado.";
+                    }
+                } else {
+                    document.getElementById("resultado").innerHTML = "No se pudo cargar el archivo XML.";
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+	<div id="imagenCentro">
+        <img src="https://img.freepik.com/fotos-premium/ilustracion-icono-hospital-graficos-dibujos-animados_1070876-11378.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1727308800&semt=ais_hybrid" alt="Descripción de la imagen" /> <!-- Cambia esta ruta a la ubicación de tu imagen -->
+    </div>
+    <h1>Consulta de Pacientes</h1>
+    <p>Ingrese el ID del paciente o el nombre del paciente:</p>
+    <input type="text" id="idPaciente" placeholder="ID del paciente" /><br><br>
+    <input type="text" id="nombrePaciente" placeholder="Nombre del paciente" /><br><br>
+    <button onclick="buscarPaciente()">Buscar</button>
+    <div id="resultado">
+    </div>
+    <footer>
+        <a href="index.html">Volver a Inicio</a> 
+    </footer>
+</body>
+</html>
+
+

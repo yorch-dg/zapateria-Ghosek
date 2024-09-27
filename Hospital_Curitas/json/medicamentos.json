@@ -1,0 +1,74 @@
+{
+    "medicamentos": [
+        {
+            "id": 1,
+            "nombre": "Paracetamol",
+            "dosis": "500mg",
+            "presentación": "Tableta",
+            "indicaciones": "Fiebre y dolor leve"
+        },
+        {
+            "id": 2,
+            "nombre": "Ibuprofeno",
+            "dosis": "400mg",
+            "presentación": "Cápsula",
+            "indicaciones": "Dolor e inflamación"
+        },
+        {
+            "id": 3,
+            "nombre": "Amoxicilina",
+            "dosis": "500mg",
+            "presentación": "Cápsula",
+            "indicaciones": "Infecciones bacterianas"
+        },
+        {
+            "id": 4,
+            "nombre": "Aspirina",
+            "dosis": "100mg",
+            "presentación": "Tableta",
+            "indicaciones": "Dolor, fiebre, y antiinflamatorio"
+        },
+        {
+            "id": 5,
+            "nombre": "Loratadina",
+            "dosis": "10mg",
+            "presentación": "Tableta",
+            "indicaciones": "Alergias"
+        },
+        {
+            "id": 6,
+            "nombre": "Omeprazol",
+            "dosis": "20mg",
+            "presentación": "Cápsula",
+            "indicaciones": "Acidez estomacal"
+        },
+        {
+            "id": 7,
+            "nombre": "Metformina",
+            "dosis": "500mg",
+            "presentación": "Tableta",
+            "indicaciones": "Diabetes tipo 2"
+        },
+        {
+            "id": 8,
+            "nombre": "Simvastatina",
+            "dosis": "20mg",
+            "presentación": "Tableta",
+            "indicaciones": "Colesterol alto"
+        },
+        {
+            "id": 9,
+            "nombre": "Cetirizina",
+            "dosis": "10mg",
+            "presentación": "Tableta",
+            "indicaciones": "Alergias y rinitis"
+        },
+        {
+            "id": 10,
+            "nombre": "Dexametasona",
+            "dosis": "1mg",
+            "presentación": "Tableta",
+            "indicaciones": "Inflamaciones y alergias"
+        }
+    ]
+}
