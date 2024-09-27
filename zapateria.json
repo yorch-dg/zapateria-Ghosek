@@ -1,0 +1,32 @@
+[
+    {
+        "folio": 1,
+        "descripcion": "Zapato de cuero negro",
+        "talla": "42",
+        "precio": 1200
+    },
+    {
+        "folio": 2,
+        "descripcion": "Zapatilla deportiva blanca",
+        "talla": "40",
+        "precio": 800
+    },
+    {
+        "folio": 3,
+        "descripcion": "Botín de gamuza marrón",
+        "talla": "41",
+        "precio": 1500
+    },
+    {
+        "folio": 4,
+        "descripcion": "Sandalia de mujer",
+        "talla": "38",
+        "precio": 600
+    },
+    {
+        "folio": 5,
+        "descripcion": "Bota de lluvia",
+        "talla": "39",
+        "precio": 900
+    }
+]
